@@ -1,23 +1,17 @@
 package lab.gcp.pubsub;
 
-import java.util.Map;
-
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PubsubMessage;
 
-public class Main {
+public class SubscriberMain {
 
 	public static void main(String[] args) {
 
-		Map<String, String> env = System.getenv();
-		for (String envName : env.keySet()) {
-			System.out.format("%s=%s%n", envName, env.get(envName));
-		}
 		String projectId = "gcplearning-219114";
-		String subscriptionId = "poc";
+		String subscriptionId = "poc2";
 
 		ProjectSubscriptionName subscriptionName = ProjectSubscriptionName.of(projectId, subscriptionId);
 		// Instantiate an asynchronous message receiver
